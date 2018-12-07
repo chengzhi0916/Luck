@@ -3,6 +3,8 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
   </head>
   <body>
     <h1><%= title %></h1>
@@ -14,3 +16,21 @@
       <h1>hello</h1>
   </body>
 </html>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      postsList: []
+    },
+    methods: {
+      fetchData () {
+        axios.get('/posts/list')
+          .then(function(response) {
+            vm.postsList = response.data.postsList;
+          })
+      }
+    }
+  });
+
+  vm.fetchData();
+</script>
