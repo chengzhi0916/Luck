@@ -28,9 +28,15 @@
           .then(function(response) {
             vm.postsList = response.data.postsList;
           })
+          .then(function(){
+            console.error(23);
+            
+          });
       }
     }
   });
+
+
 
   vm.fetchData();
 </script>
