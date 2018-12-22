@@ -9,7 +9,7 @@ var index = require('./routes/index');
 var posts = require('./routes/posts');
 var users = require('./routes/users');
 
-// view engine setup
+// view engine setup1
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
